@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const messageSchema = new mongoose.Schema({
-   
+    
     from:{
         type:String,
         required:[true,"Username of user who sent this message is madatory"]
@@ -9,6 +9,16 @@ const messageSchema = new mongoose.Schema({
     to:{
         type:String,
         required:[true,"Username of user who got this message is madatory"]
+    },
+    type:{
+        type:String,
+        required:[true,"Message Type is Mandatory"]
+    },
+    filename:{
+        type:String
+    },
+    mimeType:{
+        type:String
     },
     message:{
         type:String,
@@ -31,14 +41,7 @@ const chatSchema = new mongoose.Schema({
         type:String, 
         required:[true,"Provide a user"]
     },
-    messages:[messageSchema],
-    roomName1:{
-        type:String
-    },
-    roomName2:{
-        type:String
-    }
-
+    messages:[messageSchema]
 });
 
 const ChatSchema = mongoose.model('Chat', chatSchema);

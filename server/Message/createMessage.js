@@ -11,7 +11,7 @@ const bcryptSalt = bcrypt.genSaltSync(8);
 
 const createMessage = asyncHandler(async function(req,res){
     
-    const{from,to,message,timestamp} = req.body;
+    const{from,to,message,type,mimeType,filename,timestamp} = req.body;
     console.log("Create message API hit");
 
     if(!from || !to || !message){
@@ -27,6 +27,9 @@ const createMessage = asyncHandler(async function(req,res){
         const messageDoc = await Message.create({
             from,
             to,
+            type,
+            filename,
+            mimeType,
             message,
             "timestamp":new Date(timestamp)
         });

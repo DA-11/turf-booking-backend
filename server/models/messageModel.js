@@ -10,6 +10,16 @@ const messageSchema = new mongoose.Schema({
         type:String,
         required:[true,"Username of user who got this message is madatory"]
     },
+    type:{
+        type:String,
+        required:[true,"Message Type is Mandatory"]
+    },
+    filename:{
+        type:String
+    },
+    mimeType:{
+        type:String
+    },
     message:{
         type:String,
         required:[true,"Empty String is not considered as message"]
