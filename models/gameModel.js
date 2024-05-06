@@ -27,10 +27,10 @@ const gameSchema = new mongoose.Schema({
         type:String,
         require:[true,"Type of game being played, ex: football, Table tennis, cricket"]
     },
-    totalNoOfPlayers:{
-        type:Number,
-        required:[true,"Total Number of players needed"]
-    },
+    // totalNoOfPlayers:{
+    //     type:Number,
+    //     required:[true,"Total Number of players needed"]
+    // },
     price:Number,
     booked:Boolean
 

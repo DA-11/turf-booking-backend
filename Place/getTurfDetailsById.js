@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId;
 const getTurfDetailsById = asyncHandler(async function(req,res){
 
     const id = req.query.id;
-    console.log(id);
+    console.log('turf id' + id);
     
     const turf = await Place.findOne({"_id":id});
     

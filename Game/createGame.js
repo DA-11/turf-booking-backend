@@ -10,12 +10,12 @@ const createGame = asyncHandler(async function(req,res){
         toTime,
         players,
         game,
-        totalNoOfPlayers,
         price,
         booked} = req.body;
+    
     // console.log(fromTime);
     console.log("Create game API Called ")
-    if(!username ||!turfName || !location || !fromTime || !toTime || !price || !players || !game || !totalNoOfPlayers || (booked === undefined)){
+    if(!username ||!turfName || !location || !fromTime || !toTime || !price || !players || !game || (booked === undefined)){
         res.status(404);
         throw new Error("All fields are Mandatory");
     }
@@ -32,7 +32,6 @@ const createGame = asyncHandler(async function(req,res){
             toTime,
             players,
             game,
-            totalNoOfPlayers,
             price,
             booked
         });

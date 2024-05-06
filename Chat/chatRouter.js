@@ -7,7 +7,7 @@ const validateToken = require('../middleware/validateToken');
 const getAllUserChats = require('./getAllUserChats');
 
 
-//chatRouter.use(validateToken);
+chatRouter.use(validateToken);
 chatRouter.route('/create').post(createChat);
 chatRouter.route('/getChat').get(getChatDetails);
 chatRouter.route('/getAllUserChats').get(getAllUserChats);
