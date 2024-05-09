@@ -35,9 +35,18 @@ app.use(urlencoded({extended:false}));
 
 app.use(express.json()); //middleware function used to parse JSON data sent to request body
 app.use(cookieParser());
+// app.use(cors({
+//     credentials:true,
+//     origin:'http://localhost:3000',
+// }));
+
 app.use(cors({
     credentials:true,
-    origin:'http://localhost:3000',
+    origin:[
+    'http://localhost:3000',
+    'http://13.228.225.19',
+    'http://18.142.128.26',
+    'http://54.254.162.138']
 }));
 
 
