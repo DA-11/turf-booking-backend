@@ -44,6 +44,7 @@ app.use(cors({
     credentials:true,
     origin:[
     'https://localhost:3000',
+    'https://turf-booking-client.onrender.com',
     'https://13.228.225.19',
     'https://18.142.128.26',
     'https://54.254.162.138']
