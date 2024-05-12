@@ -5,7 +5,7 @@ const getGamesAfterCurrentTime =  asyncHandler(async function(req,res){
     const turfName =  req.query.turfName;
     const date =  req.query.date; 
     const regex = `.*${turfName}.*`
-    const games = await Game.find({turfName:{$regex:regex},fromTime:{$gt:new Date(date)}});
+    const games = await Game.find({fromTime:{$gt:new Date(date)}});
 
     if(!games){
         res.status(400);
