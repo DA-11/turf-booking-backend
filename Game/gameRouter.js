@@ -12,6 +12,7 @@ const getGameById = require('./getGameById');
 const getAllRequestGames = require('./getAllRequestGames');
 
 gameRouter.route('/getAllGames').get(getAllGames);
+gameRouter.route('/getGameAfterTime').get(getGamesAfterCurrentTime);
 
 gameRouter.use(validateToken);
 
@@ -20,7 +21,6 @@ gameRouter.route('/getAllRequestGames').post(getAllRequestGames)
 
 gameRouter.route('/deleteGame').delete(deleteGame);
 gameRouter.route('/getSingleGame').get(getSingleGame);
-gameRouter.route('/getGameAfterTime').get(getGamesAfterCurrentTime);
 gameRouter.route('/getGamebyId').get(getGameById);
 gameRouter.route('/updateGame').put(updateGame);
 gameRouter.route('/getAllUserGames').get(getAllUserGames);
