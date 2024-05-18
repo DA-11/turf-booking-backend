@@ -12,9 +12,9 @@ const getGamesAfterCurrentTime =  asyncHandler(async function(req,res){
     let games;
 
     if(turfName === '00'){
-        games = await Game.find({fromTime:{$gt:new Date(date)}});
+        games = await Game.find({fromTime:{$gt:new Date()}});
     } else {
-        games = await Game.find({turfName : {$regex : regex},fromTime:{$gt:new Date(date)}});
+        games = await Game.find({turfName : {$regex : regex},fromTime:{$gt:new Date()}});
     }
 
     if(!games){
