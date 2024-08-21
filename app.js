@@ -50,7 +50,7 @@ app.use(cors({
     'https://13.228.225.19',
     'https://18.142.128.26',
     'https://54.254.162.138',
-    'https://master--false9-turf-booking.netlify.app/']
+    'https://master--false9-turf-booking.netlify.app']
 }));
 
 
