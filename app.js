@@ -7,23 +7,23 @@ const http = require('http').Server(app);
 const cors = require('cors');
 const cookieParser = require("cookie-parser");
 const dotenv = require('dotenv');
-const connectDb = require('../DbConfig/dbConfiguration');
-const userRouter = require('../User/userRounter');
-const errorHandler = require('../middleware/errorHandler');
-const gameRouter = require('../Game/gameRouter');
-const chatRouter = require('../Chat/chatRouter');
-const messageRouter = require('../Message/messageRouter');
-const turfRouter = require('../Place/turfRouter');
+const connectDb = require('./DbConfig/dbConfiguration');
+const userRouter = require('./User/userRounter');
+const errorHandler = require('./middleware/errorHandler');
+const gameRouter = require('./Game/gameRouter');
+const chatRouter = require('./Chat/chatRouter');
+const messageRouter = require('./Message/messageRouter');
+const turfRouter = require('./Place/turfRouter');
 
-const multerUploads = require('../middleware/multer').multerUploads;
+const multerUploads = require('./middleware/multer').multerUploads;
 
-const dataUri = require('../middleware/multer').dataUri;
+const dataUri = require('./middleware/multer').dataUri;
 const urlencoded = require('body-parser').urlencoded;
 const json = require('body-parser').json;
 const {resolve} = require('path');
 
-const {cloudinaryConfig,uploader} = require('../config/cloudinaryConfig');
-const gameRequestRouter = require('../GameRequest/gameRequestRouter');
+const {cloudinaryConfig,uploader} = require('./config/cloudinaryConfig');
+const gameRequestRouter = require('./GameRequest/gameRequestRouter');
 //const uploader = require('./config/cloudinaryConfig').uploader;
 
 dotenv.config();
@@ -201,5 +201,5 @@ http.listen(port, () => {
     console.log("Server Listening at port", port);
 })
 
-app.use("/.netlify/functions/app", router);
-module.exports.handler = serverless(app);
+// app.use("/.netlify/functions/app", router);
+// module.exports.handler = serverless(app);
