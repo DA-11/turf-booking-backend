@@ -42,7 +42,7 @@ const loginUser = asyncHandler(async function(req,res){
         }
 
         console.log(token);
-        res.cookie('token',token, {secure:true,sameSite:'none'}).json(user);
+        res.cookie('token',token, {secure:true,SameSite:'none'}).json(user);
         //res.status(201).json(token);
     })
 
